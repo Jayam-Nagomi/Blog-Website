@@ -1,0 +1,136 @@
+body {
+  margin: 0;
+  padding: 3% 20%;
+  background-color: black;
+  height: 100vh;
+  color: white;
+  font-family: Outfit, Arial, Helvetica, sans-serif;
+}
+
+/* header */
+
+.head-logo {
+  font-family: "League Spartan";
+  font-size: 40px;
+  font-weight: 600;
+  color: grey;
+}
+
+.head-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 15%;
+}
+
+.head-nav {
+  display: flex;
+  gap: 20px;
+}
+
+.head-nav a {
+  text-decoration: none;
+  color: grey;
+  font-size: 20px;
+}
+
+.head-nav a:hover {
+  color: rgba(255, 255, 255, 0.978);
+}
+
+@media (max-width: 780px) {
+  body {
+    padding: 1% 2%;
+  }
+  .head-logo {
+    font-size: 30px;
+    font-weight: 500;
+  }
+  .head-nav {
+    gap: 15px;
+  }
+  .head-nav a {
+    font-size: 18px;
+  }
+}
+
+/* hero section */
+
+.hero-section {
+  height: 30%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.hero-section h3 {
+  color: rgba(255, 255, 255, 0.978);
+  font-family: "League Spartan";
+  font-size: 120px;
+  font-weight: 800;
+  margin: 0;
+  flex-basis: 100%;
+}
+
+.hero-section h5 {
+  margin-top: -20px;
+  font-weight: 400;
+  font-size: 25px;
+  color: grey;
+}
+
+@media (max-width: 780px) {
+  .hero-section h3 {
+    font-size: 80px;
+    font-weight: 700;
+  }
+  .hero-section h5 {
+    font-size: 20px;
+  }
+}
+
+/* blogs */
+.blogs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 2.7em;
+}
+
+.blog-container a {
+  text-decoration: none;
+}
+
+.blog-header h3 {
+  color: rgba(255, 255, 255, 0.978);
+  font-size: 25px;
+  font-weight: 350;
+}
+
+.blog-date h4 {
+  color: grey;
+  font-size: 18px;
+  font-weight: 300;
+}
+
+@media (max-width: 780px) {
+  .blog-header h3 {
+    font-size: 20px;
+    font-weight: 350;
+  }
+}
+
+/* footer section */
+footer {
+  text-align: center;
+  color: grey;
+  margin: 10%;
+  font-size: 20px;
+}
+
+@media (max-width: 780px) {
+  footer {
+    font-size: 18px;
+    font-weight: 200;
+  }
+}

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Blog</title>
+    <link rel="stylesheet" href="blogstyle.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- header -->
+    <div class="head-container">
+      <div class="head-logo">
+        <p>jayam.</p>
+      </div>
+      <div class="head-nav">
+        <div><a href="index.html">Home</a></div>
+        <div><a href="#">Explore</a></div>
+      </div>
+    </div>
+    <br />
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+      <div>
+        <h3>First Interview Experience</h3>
+        <h5>Dec 13, 2024</h5>
+      </div>
+    </div>
+
+    <!-- blog content -->
+    <div class="blog-content">
+      <p>"Something is better than Nothing!"</p>
+      <p>
+        In this article, I share about my first real world project experience in
+        the data field. I chose an interesting topic to do my project which is a
+        problem statement given in SIH Hackathon which is building a model to
+        efficiently handle the water demand.
+      </p>
+      <h4>Finding the model & Features</h4>
+      <p>
+        I did my research and chose LSTM to be my model to forecast water
+        demand. Interestingly, First I looked upon some projects built using
+        this model such as stock forecasting then learned the architecture to
+        better understand the LSTM. And it worked.
+      </p>
+      <p>
+        So, I went to build the project. As every student does, I went to
+        ChatGPT because I had no idea where to start and found that I should
+        collect three important types of data that describe water availability:
+        reservoir levels, rainfall rates, and historical data on water usage.
+      </p>
+      <h4>Data Collection</h4>
+      <p>
+        Then started collecting the daily data of reservoir level and rainfall
+        level (year: 2023) from data.gov.in and for water usage the daily data
+        of water usage was not available so I used the yearly average data from
+        data.opencity.in. This took me a 2 days to complete because most of the
+        data repositories by government were not maintained well which led me to
+        404 ERROR!.
+      </p>
+      <p>
+        Then I merged them all three into one csv file and started cleaning it
+        by removing rows with NULL values. Then merged them using Dates and
+        Districts.
+      </p>
+      <h4>Facing Issues</h4>
+      <p>
+        My data had many variables that I didn't even understand. But again I
+        just copied the code from chatGPT and found the performance is poor. The
+        line plot looked awful and I couldn't find what's going wrong that made
+        me frustrated.
+      </p>
+      <img src="Images/blog1-1.png" alt="Visualization of Data" />
+      <p>
+        Then I took a break and came back again to find a mistake that I have
+        given a feature to predict the same feature but in different metrics. So
+        Once I found that I realized my first mistake that
+      </p>
+      <p><i>1. I am using the features which I don't even understand.</i></p>
+      <p>
+        So, I went to YouTube to learn more about the domain and figured out
+        which variables contribute to water demand and I used them to predict.
+        (But still the plot looked crazy). As soon as, I started learning about
+        the domain I used some tutorials to learn and write code on my own
+        rather than just copy pasting from chatGPT.
+      </p>
+      <img src="Images/blog1-2.png" alt="Variables Chosen" />
+      <p>
+        And after seeing the tutorials I found ARIMA models like LSTM need
+        timely Data but
+      </p>
+      <p><i>2. I removed some dates which had null values.</i></p>
+      <p>
+        So, I revoked and started to impute the null values with monthly
+        averages.
+      </p>
+      <img src="Images/blog1-3.png" alt="Imputing the null values" />
+      <p>
+        <i
+          >3. And I found a problem with water usage which had yearly average.
+        </i>
+      </p>
+      <p>
+        Since, I couldn't able to find any daily data of water usage on the
+        internet I used the data with the wrong values to find out what would
+        happen. Basically I was expecting it to do well as other two variables
+        were in the right order.
+      </p>
+      <p><i>4. Messy Plots</i></p>
+      <p>
+        Still, I keep getting the messy plots. So I went to chatGPT to find what
+        is going on. It said the frequency of data is high which makes the plot
+        not understandable. So I resampled them to make it interpretable.
+      </p>
+      <img src="Images/blog1-4.png" alt="Visualization after resampling" />
+      <p><i>5. Processing Time</i></p>
+      <p>
+        Once done, I found that the learning process was so long. I waited day
+        and night but still it is a never ending story...
+      </p>
+      <p>
+        So again, I went to watch some tutorial to find out about the Early
+        Stopping condition which makes the model stops processing when it is not
+        learning anymore. This way the time taken to process was reduced.
+      </p>
+      <p><i>6. Fine Tuning</i></p>
+      <p>
+        After training, I found that it needed some adjustments. That's when I
+        realized that although I had learned about architecture and everything
+        related to LSTM, I didn't fully understand the meaning of each
+        parameter. So, I went to ChatGPT to learn about it and discovered that
+        increasing the dropout value would help prevent overfitting. I then made
+        the necessary changes.
+      </p>
+      <h4>Results</h4>
+      <img
+        src="Images/blog1-5.png"
+        alt="Final Visualization of Predicted vs Actual values"
+      />
+      <p>
+        You can check out my project details here:
+        <a
+          href="https://docs.google.com/document/d/1LUvqaOyDRsD4XnsKpf3Jtbsvpgd3QElW/edit?usp=drivesdk&ouid=116672525624405574901&rtpof=true&sd=true"
+          >paper link</a
+        >
+      </p>
+      <h4>Experience Gained</h4>
+      <p>
+        Overall it was a great project experience where I made mistakes,
+        corrected some of them but learned a lot about my career. Moreover, I
+        also experienced how a real world scenario of a data science project
+        would look like. Here are the few things I learnt from my mistakes:
+      </p>
+      <ul>
+        <li>
+          <b>Domain Knowledge</b> is important (to know which features to use &
+          more)
+        </li>
+        <li>NULL values need to <b>handled</b> properly</li>
+        <li>
+          <b>Data Quality = Model Performance</b> (because my model didn't
+          perform well on yearly average even though I fine tune the model)
+        </li>
+        <li>
+          Knowing the working of model is not enough. We must know its
+          <b>data requirements</b> ( for LSTM we needed daily data) and
+          parameters ( dropout is needed to prevent the overfitting)
+        </li>
+        <li>
+          Finally, to fine tune <b>maths</b> is important especially algebra is
+          needed (statistics is NOT ENOUGH)
+        </li>
+      </ul>
+      <p>
+        Here is the link to my Collab notebook:
+        <a
+          href="https://colab.research.google.com/drive/1l26h5JBRYJVJGTUxDxJNHChWYraMZCLe?usp=sharing"
+          >notebook link</a
+        >
+      </p>
+      <p>
+        This whole project took me about 7 days to complete as it was my first
+        time I was learning about everything before implementing it. Each step I
+        took came with its challenges, from data collection, cleaning, and
+        merging to visualization, modeling, and fine-tuning and Each challenge
+        had its own level of difficulty.
+      </p>
+      <p>
+        And most of the all the processing time was so exhausting. Since, I was
+        using a government laptop (6 years old) with 4GB of RAM and low power
+        processor. So, I used Collab, where I had to constantly monitor whether
+        the system was running, which kept me awake for two whole nights. All
+        these efforts resulted in amazing outcomes, earning appreciation and
+        feedback from the jury during the presentation.
+      </p>
+    </div>
+    <footer>
+      <p>&copy; All rights reserved -- Nagomi Jayamani</p>
+    </footer>
+  </body>
+</html>

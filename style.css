@@ -5,15 +5,21 @@ body {
   height: 100vh;
   color: white;
   font-family: Outfit, Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
 }
 
 /* header */
 
-.head-logo {
+.head-logo a {
+  text-decoration: none;
   font-family: "League Spartan";
   font-size: 40px;
   font-weight: 600;
   color: grey;
+}
+
+.head-logo:hover a {
+  color: rgba(255, 255, 255, 0.978);
 }
 
 .head-container {
@@ -57,7 +63,7 @@ body {
 /* hero section */
 
 .hero-section {
-  height: 30%;
+  height: auto;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -109,8 +115,12 @@ body {
 
 .blog-date h4 {
   color: grey;
-  font-size: 18px;
-  font-weight: 300;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.blogs:hover .blog-date h4 {
+  color: rgba(255, 255, 255, 0.978);
 }
 
 @media (max-width: 780px) {
